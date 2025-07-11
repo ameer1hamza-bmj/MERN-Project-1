@@ -13,7 +13,7 @@ const AdminUsers = () => {
   const { authorizationToken,API } = useAuth();
 
   const fetchUsers = async () => {
-    const res = await fetch(`${API}/api/admin/users/`, {
+    const res = await fetch(`${API}/api/admin/users`, {
       headers: { Authorization: authorizationToken }
     });
     if (!res.ok) throw new Error('Failed to fetch users');

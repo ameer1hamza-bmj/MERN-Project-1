@@ -35,10 +35,10 @@ export const AuthProvider = ({ children }) => {
     const userAuthentication = async () => {
         try {
             setIsLoading(true)
-            const responce = await fetch('http://localhost:1000/api/auth/user', {
+            const responce = await fetch(`${API}/api/auth/user`, {
                 method: 'GET',
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: authorizationToken,
                 }
             })
             if (responce.ok) {
